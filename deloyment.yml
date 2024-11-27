@@ -1,18 +1,24 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: my-app
-  namespace: argocd
+  labels:
+    app: my-app
 spec:
-  project: default
-  source:
-    repoURL: 'https://github.com/Siva-828926/prj-badminton-manifest.git'
-    targetRevision: master
-    path: .
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-app-container
+          image: ghcr.io/siva-828926/bad-court:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: ENV_VAR_NAME
+              value: "value"
