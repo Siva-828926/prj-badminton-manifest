@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: ghcr.io/siva-828926/bad-court:new-tag  # Updated Docker image
+          image: ghcr.io/siva-828926/bad-court:latest
           ports:
             - containerPort: 80
           env:
