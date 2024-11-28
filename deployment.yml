@@ -30,11 +30,11 @@ spec:
           httpGet:
             path: /badcourt/actuator/health
             port: 8080
-          initialDelaySeconds: 3
+          initialDelaySeconds: 30ss
           periodSeconds: 3
         readinessProbe:
           httpGet:
             path: /badcourt/actuator/health
             port: 8080
-          initialDelaySeconds: 3
+          initialDelaySeconds: 60
           periodSeconds: 3
