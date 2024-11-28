@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: ghcr.io/siva-828926/bad-court:3eae1333ee6ed15b6921e616f17d8115e3a5146f
+        image: ghcr.io/siva-828926/bad-court:6512f97f2f51fceaddbe148a05f9ee789f0c1e6f
         ports:
         - containerPort: 8080
         resources:
