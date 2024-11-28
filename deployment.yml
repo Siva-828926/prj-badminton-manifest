@@ -15,26 +15,26 @@ spec:
         app: my-app
     spec:
       containers:
-        - name: my-app-container
-          image: ghcr.io/siva-828926/bad-court:24c840d48965a4e5b1372044b535f2f1fe2d2e19
-          ports:
-            - containerPort: 8080
-          resources:
-            limits:
-              memory: "512Mi"
-              cpu: "500m"s
-            requests:
-              memory: "256Mi"
-              cpu: "250m"
-          livenessProbe:
-            httpGet:
-              path: /badcourt/actuator/health
-              port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 3
-          readinessProbe:
-            httpGet:
-              path: /badcourt/actuator/health
-              port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 3
+      - name: my-app-container
+        image: ghcr.io/siva-828926/bad-court:24c840d48965a4e5b1372044b535f2f1fe2d2e19
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            path: /badcourt/actuator/health
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /badcourt/actuator/health
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
